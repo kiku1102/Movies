@@ -1,8 +1,15 @@
+
 function Conten() {
-    return(
-        <div>
-            <h1>Đây là conten</h1> 
-        </div>
+    
+
+
+
+    
+
+    return (
+      <div>
+        
+      </div>  
     )
 }
 export default Conten;

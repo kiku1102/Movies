@@ -1,4 +1,4 @@
-import { Container, Row, Col, Carousel, CarouselIndicators, CarouselItem, CarouselControl, UncontrolledCarousel } from "reactstrap";
+import { UncontrolledCarousel } from "reactstrap";
 import { useEffect, useState } from "react";
 
 
@@ -18,12 +18,13 @@ function CarouselSlider() {
                 console.log(data.results);
                 setImg(data.results.map(item =>(
                     {
-                        altText: item.overview,
+                        // altText: item.overview,
                         caption: item.title,
                         key: 1,
                         src: `https://image.tmdb.org/t/p/w1920_and_h800_multi_faces/${item.backdrop_path}`
                     }
                 )))
+                
             })
             .catch((error) => {
                 console.log(error);
@@ -37,8 +38,7 @@ function CarouselSlider() {
         <UncontrolledCarousel
         interval={2000}
         autoPlay
-        
-            items={
+        items={
                 img ? img : []
             }
         />

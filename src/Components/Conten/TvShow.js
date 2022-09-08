@@ -15,7 +15,9 @@ function TvShow() {
         getData("https://api.themoviedb.org/3/tv/on_the_air?api_key=67687c1c021fb5d042463da4a1ca5259&page=1")
         .then((data) =>{
             console.log(data.results);
-            setTvShow(data.results);
+            const allData = data.results;
+            const filter = allData.slice(0, 7);
+            setTvShow(filter);
         })
         .catch((error) => {
             console.log(error);
@@ -25,8 +27,8 @@ function TvShow() {
         <Container>
             <Grid container mt={8} textAlign="center" spacing={2}>
                 <Grid item xs={12} md={12} sm={12} lg={12}>
-                    <Typography variant="h2" style={{ "textDecoration": "none", "color": "#8E3200", "fontWeight": "bold" }} className='fontapp'>
-                        Tv Show
+                    <Typography variant="h2" style={{ "textDecoration": "none", "color": "#fff", "fontWeight": "bold" }} className='fontapp'>
+                        Tv Series
                     </Typography>
                 </Grid>
                 {tvShow.map((tvShows, index) => (

@@ -18,9 +18,9 @@ function CarouselSlider() {
                 console.log(data.results);
                 setImg(data.results.map(item =>(
                     {
-                        // altText: item.overview,
+                        altText: item.title,
                         caption: item.title,
-                        key: 1,
+                        key: 0,
                         src: `https://image.tmdb.org/t/p/w1920_and_h800_multi_faces/${item.backdrop_path}`
                     }
                 )))
